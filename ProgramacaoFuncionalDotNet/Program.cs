@@ -9,6 +9,14 @@ namespace ProgramacaoFuncionalDotNet
         public const int TABUADA = 2;
         public const int CALCULO_MEDIA = 3;
 
+        public static void exibeTabuada(int n)
+        {
+            for (int i = 1; i <= 10; i++)
+            {
+                Console.WriteLine($"{n} X {i} = {n*i}");
+            }
+        }
+
         static void Main(string[] args)
         {
             while (true)
@@ -27,10 +35,16 @@ namespace ProgramacaoFuncionalDotNet
                 {
                     case 0:
                         Console.WriteLine("Obrigado por utilizar nosso programa!!!");
+                        Environment.Exit(0);
                         break;
                     case 1:
                         break;
                     case 2:
+                        Console.WriteLine("\n================Tabuada================\n");
+                        Console.Write("Digite a tabuada desejada: ");
+                        int numero_tabuada = int.Parse(Console.ReadLine());
+                        exibeTabuada(numero_tabuada);
+                        Console.WriteLine("\n=======================================\n");
                         break;
                     case 3:
                         break;
