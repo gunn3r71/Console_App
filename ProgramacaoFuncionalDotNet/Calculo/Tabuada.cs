@@ -4,7 +4,7 @@ namespace Calculo
 {
     class Tabuada
     {
-        public static void ExibeTabuada(int n)
+        public static void Calcular(int n)
         {
             #region Exibindo Tabuada
             for (int i = 1; i <= 10; i++)

@@ -5,7 +5,7 @@ namespace Calculo
 {
     class Media
     {
-        public static void CalcularMedia(double nota1, double nota2, double nota3)
+        public static void Nota(double nota1, double nota2, double nota3)
         {
             #region Calcula e exibe média
             double media = (nota1 + nota2 + nota3) / 3;
