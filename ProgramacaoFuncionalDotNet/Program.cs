@@ -9,6 +9,7 @@ namespace ProgramacaoFuncionalDotNet
         public const int LER_ARQUIVOS = 1;
         public const int TABUADA = 2;
         public const int CALCULO_MEDIA = 3;
+        public const int LIMPAR_TELA = 4;
 
         public static void ExibeTabuada(int n)
         {
@@ -47,7 +48,8 @@ namespace ProgramacaoFuncionalDotNet
                     + "Agora digite uma das opções abaixo: \n\n"
                     + $"Para Ler Arquivos, Digite {LER_ARQUIVOS};\n"
                     +$"Para Calcular uma tabuada, Digite {TABUADA};\n"
-                    +$"Para Efetuar um cálcuo de média, Digite {CALCULO_MEDIA};\n\n";
+                    +$"Para Efetuar um cálcuo de média, Digite {CALCULO_MEDIA};\n"
+                    +$"Para Limpar a tela, Digite {LIMPAR_TELA};\n\n";
 
                 Console.WriteLine($"{menu}Digite {SAIR} para sair do programa!");
                 Console.Write("> ");
@@ -55,11 +57,11 @@ namespace ProgramacaoFuncionalDotNet
 
                 switch (opcao)
                 {
-                    case 0:
+                    case SAIR:
                         Console.WriteLine("Obrigado por utilizar nosso programa!!!");
                         Environment.Exit(0);
                         break;
-                    case 1:
+                    case LER_ARQUIVOS:
                         Console.WriteLine("\n================Ler Arquivos================\n");
                         Console.Write("Digite o nome e o número do arquivo separados por virgula ( Ex: Arq,1): ");
                         string[] arquivo = Console.ReadLine().Split(",");
@@ -68,14 +70,17 @@ namespace ProgramacaoFuncionalDotNet
                         LerArquivo(nome_arquivo,numero_arquivo);
                         Console.WriteLine("\n============================================\n");
                         break;
-                    case 2:
+                    case TABUADA:
                         Console.WriteLine("\n================Tabuada================\n");
                         Console.Write("Digite a tabuada desejada: ");
                         int numero_tabuada = int.Parse(Console.ReadLine());
                         ExibeTabuada(numero_tabuada);
                         Console.WriteLine("\n=======================================\n");
                         break;
-                    case 3:
+                    case CALCULO_MEDIA:
+                        break;
+                    case LIMPAR_TELA:
+                        Console.Clear();
                         break;
                     default:
                         break;
