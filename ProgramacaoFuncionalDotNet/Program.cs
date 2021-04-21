@@ -1,5 +1,6 @@
 ﻿using System;
 using System.IO;
+using System.Globalization;
 
 namespace ProgramacaoFuncionalDotNet
 {
@@ -38,6 +39,12 @@ namespace ProgramacaoFuncionalDotNet
             {
                 Console.WriteLine("Não existem mais arquivos para Ler!");
             }
+        }
+
+        public static void CalcularMedia(double nota1, double nota2, double nota3)
+        {
+            double media = (nota1 + nota2 + nota3) / 3;
+            Console.WriteLine($"Media calculada: {media.ToString("F2",CultureInfo.InvariantCulture)}");
         }
 
         static void Main(string[] args)
@@ -81,6 +88,9 @@ namespace ProgramacaoFuncionalDotNet
                         break;
                     case CALCULO_MEDIA:
                         Console.WriteLine("\n================Calcular Média================\n");
+                        Console.Write("Digite 3 notas separados por virgula (9.5,10.0,8.5): ");
+                        string[] notas = Console.ReadLine().Split(",");
+                        CalcularMedia(double.Parse(notas[0],CultureInfo.InvariantCulture), double.Parse(notas[1], CultureInfo.InvariantCulture), double.Parse(notas[2], CultureInfo.InvariantCulture));
                         Console.WriteLine("\n==============================================\n");
                         break;
                     case LIMPAR_TELA:
