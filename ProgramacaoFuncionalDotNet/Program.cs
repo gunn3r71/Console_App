@@ -19,7 +19,7 @@ namespace ProgramacaoFuncionalDotNet
             }
         }
 
-        public static void LerArquivo(string nome, int numero_arquivo)
+        public static void LerArquivos(string nome, int numero_arquivo)
         {
             string nome_arquivo = $@"C:\ArquivosDotNetRead\{nome}{numero_arquivo}.txt"; // Monta a string que gera o caminho do arquivo a ser lido
             if (File.Exists(nome_arquivo)) // verifica se arquivo existe
@@ -32,7 +32,7 @@ namespace ProgramacaoFuncionalDotNet
                         Console.WriteLine(linha);
                     }
                 }
-                LerArquivo(nome, numero_arquivo + 1); // Chama a função incrementando um ao número do arquivo
+                LerArquivos(nome, numero_arquivo + 1); // Chama a função incrementando um ao número do arquivo
             }
             else
             {
@@ -58,7 +58,9 @@ namespace ProgramacaoFuncionalDotNet
                 switch (opcao)
                 {
                     case SAIR:
+                        Console.WriteLine("\n==============================================");
                         Console.WriteLine("Obrigado por utilizar nosso programa!!!");
+                        Console.WriteLine("==============================================\n");
                         Environment.Exit(0);
                         break;
                     case LER_ARQUIVOS:
@@ -67,7 +69,7 @@ namespace ProgramacaoFuncionalDotNet
                         string[] arquivo = Console.ReadLine().Split(",");
                         string nome_arquivo = arquivo[0];
                         int numero_arquivo = int.Parse(arquivo[1]);
-                        LerArquivo(nome_arquivo,numero_arquivo);
+                        LerArquivos(nome_arquivo,numero_arquivo);
                         Console.WriteLine("\n============================================\n");
                         break;
                     case TABUADA:
@@ -78,11 +80,16 @@ namespace ProgramacaoFuncionalDotNet
                         Console.WriteLine("\n=======================================\n");
                         break;
                     case CALCULO_MEDIA:
+                        Console.WriteLine("\n================Calcular Média================\n");
+                        Console.WriteLine("\n==============================================\n");
                         break;
                     case LIMPAR_TELA:
                         Console.Clear();
                         break;
                     default:
+                        Console.WriteLine("\n==============================================");
+                        Console.WriteLine("Atenção, a opção digitada é inválida");
+                        Console.WriteLine("==============================================\n");
                         break;
                 }
             }
