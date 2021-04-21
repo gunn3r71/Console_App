@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Globalization;
+using Calculo;
 
 namespace ProgramacaoFuncionalDotNet
 {
@@ -51,14 +52,14 @@ namespace ProgramacaoFuncionalDotNet
                         Console.WriteLine("\n================Tabuada================\n");
                         Console.Write("Digite a tabuada desejada: ");
                         int numero_tabuada = int.Parse(Console.ReadLine());
-                        ExibeTabuada(numero_tabuada);
+                        Tabuada.ExibeTabuada(numero_tabuada);
                         Console.WriteLine("\n=======================================\n");
                         break;
                     case CALCULO_MEDIA:
                         Console.WriteLine("\n================Calcular Média================\n");
                         Console.Write("Digite 3 notas separados por virgula (9.5,10.0,8.5): ");
                         string[] notas = Console.ReadLine().Split(",");
-                        CalcularMedia(double.Parse(notas[0], CultureInfo.InvariantCulture), double.Parse(notas[1], CultureInfo.InvariantCulture), double.Parse(notas[2], CultureInfo.InvariantCulture));
+                        Media.CalcularMedia(double.Parse(notas[0], CultureInfo.InvariantCulture), double.Parse(notas[1], CultureInfo.InvariantCulture), double.Parse(notas[2], CultureInfo.InvariantCulture));
                         Console.WriteLine("\n==============================================\n");
                         break;
                     case LIMPAR_TELA:
@@ -70,16 +71,6 @@ namespace ProgramacaoFuncionalDotNet
                         Console.WriteLine("==============================================\n");
                         break;
                 }
-            }
-            #endregion
-        }
-
-        public static void ExibeTabuada(int n)
-        {
-            #region Exibindo Tabuada
-            for (int i = 1; i <= 10; i++)
-            {
-                Console.WriteLine($"{n} X {i} = {n*i}");
             }
             #endregion
         }
@@ -106,15 +97,6 @@ namespace ProgramacaoFuncionalDotNet
             }
             #endregion
         }
-
-        public static void CalcularMedia(double nota1, double nota2, double nota3)
-        {
-            #region Calcula e exibe média
-            double media = (nota1 + nota2 + nota3) / 3;
-            Console.WriteLine($"Media calculada: {media.ToString("F2",CultureInfo.InvariantCulture)}");
-            #endregion
-        }
-
         static void Main(string[] args)
         {
             ExibeMenu();
