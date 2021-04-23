@@ -30,7 +30,7 @@ namespace Classes
                         {
                             continue;
                         }
-                        string[] dados = linha.Split(";");
+                        string[] dados = linha.Split(';');
                         clientes.Add(new Cliente { Nome = dados[0], Telefone = dados[1], Email = dados[2] });
                     }
                 }
