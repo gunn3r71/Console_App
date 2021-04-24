@@ -46,9 +46,9 @@ namespace Classes
         private static string _db = ConfigurationManager.AppSettings["db"];
 
         /// <summary>
-        /// Método auxiliar para converter o cliente numa string compativel com o banco
+        /// Método auxiliar para converter o cliente numa string compátivel com o banco
         /// </summary>
-        /// <param name="cliente">Instância de Cliente requirida</param>
+        /// <param name="cliente">Instância de Cliente requerida</param>
         /// <returns></returns>
         public string RetornaClienteFormatado(Cliente cliente)
         {
