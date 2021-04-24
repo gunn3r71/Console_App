@@ -45,6 +45,29 @@ namespace Classes
         public string Email;
         private static string _db = ConfigurationManager.AppSettings["db"];
 
+        /// <summary>
+        /// Método auxiliar para converter o cliente numa string compativel com o banco
+        /// </summary>
+        /// <param name="cliente">Instância de Cliente requirida</param>
+        /// <returns></returns>
+        public string RetornaClienteFormatado(Cliente cliente)
+        {
+            return $"{cliente.Nome};{cliente.Telefone};{cliente.Email};";
+        }
+
+        /// <summary>
+        /// Método que adiciona cliente ao banco de dados
+        /// </summary>
+        public void AdicionarCliente(Cliente cliente)
+        {
+            if (File.Exists(_db))
+            {
+                using (var writer = new StreamWriter(_db, true))
+                {
+                    writer.WriteLine(RetornaClienteFormatado(cliente));
+                }
+            }
+        }
 
         /// <summary>
         /// Método que retorna lista de todos os clientes presentes no banco
