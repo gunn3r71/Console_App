@@ -45,6 +45,11 @@ namespace Classes
         public string Email;
         private static string _db = ConfigurationManager.AppSettings["db"];
 
+
+        /// <summary>
+        /// Método que retorna lista de todos os clientes presentes no banco
+        /// </summary>
+        /// <returns>Lista de clientes</returns>
         public static List<Cliente> LerClientes()
         {
             var clientes = new List<Cliente>();
