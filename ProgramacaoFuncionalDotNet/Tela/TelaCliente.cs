@@ -40,13 +40,13 @@ namespace Tela
                         string email = Console.ReadLine();
 
                         var cliente = new Cliente(nome, telefone.ToString(), email);
-                        cliente.AdicionarCliente();
+                        cliente.Adicionar();
                         Console.WriteLine("\n=================================================\n");
                         break;
                     case LISTAR_CLIENTES:
                         Console.WriteLine("\n================Listar Clientes================\n");
                         Console.WriteLine("Clientes:");
-                        var clientes = Cliente.LerClientes();
+                        var clientes = Cliente.Ler();
                         foreach (var c in clientes)
                         {
                             Console.WriteLine(c);

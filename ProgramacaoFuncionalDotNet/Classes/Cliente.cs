@@ -50,7 +50,7 @@ namespace Classes
         /// </summary>
         /// <param name="cliente">Instância de Cliente requerida</param>
         /// <returns></returns>
-        private string RetornaClienteFormatado(Cliente cliente)
+        public string RetornaClienteFormatado(Cliente cliente)
         {
             return $"{cliente.Nome};{cliente.Telefone};{cliente.Email};";
         }
@@ -58,7 +58,7 @@ namespace Classes
         /// <summary>
         /// Método que adiciona cliente ao banco de dados
         /// </summary>
-        public void AdicionarCliente()
+        public void Adicionar()
         {
             if (File.Exists(_db))
             {
@@ -77,7 +77,7 @@ namespace Classes
         /// Método que retorna lista de todos os clientes presentes no banco
         /// </summary>
         /// <returns>Lista de clientes</returns>
-        public static List<Cliente> LerClientes()
+        public static List<Cliente> Ler()
         {
             var clientes = new List<Cliente>();
             if (File.Exists(_db))
