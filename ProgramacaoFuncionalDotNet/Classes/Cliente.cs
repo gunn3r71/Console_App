@@ -66,6 +66,10 @@ namespace Classes
                 {
                     writer.WriteLine(RetornaClienteFormatado(this));
                 }
+                Console.WriteLine("\n\nCliente Adicionado com sucesso!!!");
+            } else
+            {
+                Console.WriteLine("\n\nDiretório inexistene, verifique o caminho do arquivo e tente novamente!");
             }
         }
 
