@@ -1,5 +1,6 @@
 ﻿using Calculo;
 using Pastas;
+using Classes;
 using System;
 using System.Globalization;
 
@@ -12,7 +13,8 @@ namespace Tela
         private const int LER_ARQUIVOS = 1;
         private const int TABUADA = 2;
         private const int CALCULO_MEDIA = 3;
-        private const int LIMPAR_TELA = 4;
+        private const int CADASTRAR_CLIENTE = 4;
+        private const int LIMPAR_TELA = 5;
         #endregion
 
         public static void Criar()
@@ -25,6 +27,7 @@ namespace Tela
                     + $"Para Ler Arquivos, Digite {LER_ARQUIVOS};\n"
                     + $"Para Calcular uma tabuada, Digite {TABUADA};\n"
                     + $"Para Efetuar um cálcuo de média, Digite {CALCULO_MEDIA};\n"
+                    + $"Para Cadastrar cliente, Digite {CADASTRAR_CLIENTE}\n"
                     + $"Para Limpar a tela, Digite {LIMPAR_TELA};\n\n";
 
                 Console.WriteLine($"{menu}Digite {SAIR} para sair do programa!");
@@ -61,6 +64,19 @@ namespace Tela
                         string[] notas = Console.ReadLine().Split(",");
                         Media.Nota(double.Parse(notas[0], CultureInfo.InvariantCulture), double.Parse(notas[1], CultureInfo.InvariantCulture), double.Parse(notas[2], CultureInfo.InvariantCulture));
                         Console.WriteLine("\n==============================================\n");
+                        break;
+                    case CADASTRAR_CLIENTE:
+                        Console.WriteLine("\n================Cadastrar Cliente================\n");
+                        Console.Write("Para começar, insira o nome do cliente: ");
+                        string nome = Console.ReadLine();
+                        Console.Write("Agora insira o telefone do cliente(Apenas números): ");
+                        int telefone = int.Parse(Console.ReadLine());
+                        Console.Write("Agora insira o email do cliente: ");
+                        string email = Console.ReadLine();
+
+                        var cliente = new Cliente(nome,telefone,email);
+                        cliente.AdicionarCliente();
+                        Console.WriteLine("\n=================================================\n");
                         break;
                     case LIMPAR_TELA:
                         Console.Clear();

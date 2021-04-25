@@ -50,7 +50,7 @@ namespace Classes
         /// </summary>
         /// <param name="cliente">Instância de Cliente requerida</param>
         /// <returns></returns>
-        public string RetornaClienteFormatado(Cliente cliente)
+        private string RetornaClienteFormatado(Cliente cliente)
         {
             return $"{cliente.Nome};{cliente.Telefone};{cliente.Email};";
         }
@@ -58,13 +58,13 @@ namespace Classes
         /// <summary>
         /// Método que adiciona cliente ao banco de dados
         /// </summary>
-        public void AdicionarCliente(Cliente cliente)
+        public void AdicionarCliente()
         {
             if (File.Exists(_db))
             {
                 using (var writer = new StreamWriter(_db, true))
                 {
-                    writer.WriteLine(RetornaClienteFormatado(cliente));
+                    writer.WriteLine(RetornaClienteFormatado(this));
                 }
             }
         }
@@ -100,9 +100,9 @@ namespace Classes
 
         public override string ToString()
         {
-            return $"Nome: {Nome}\n"
-                  +$"Telefone: {Telefone}\n"
-                  +$"Email: {Email}\n";
+            return $"Nome: {this.Nome}\n"
+                  +$"Telefone: {this.Telefone}\n"
+                  +$"Email: {this.Email}\n";
         }
     }
 }
