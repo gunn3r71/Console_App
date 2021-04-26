@@ -9,17 +9,23 @@ namespace Classes
     {
         private static string _db = ConfigurationManager.AppSettings["usuarios_db"];
 
+        public Usuario(string nome, string telefone, string email) : base(nome, telefone, email)
+        {
+        }
+
         /// <summary>
         /// Método auxiliar para converter o usuário numa string compátivel com o banco
         /// </summary>
         /// <param name="usuario">Instância de Cliente requerida</param>
         /// <returns></returns>
-
         private string RetornaFormatado(Usuario usuario)
         {
             return $"{usuario.Nome};{usuario.Telefone};{usuario.Email};";
         }
 
+        /// <summary>
+        /// Método utilizado para adicionar Usuários a base de dados
+        /// </summary>
         public override void Adicionar() //override sobreescreve o método da classe pai
         {
             if (File.Exists(_db))
@@ -36,6 +42,10 @@ namespace Classes
             }
         }
 
+        /// <summary>
+        /// Método utilizado para ler banco de dados de usuarios
+        /// </summary>
+        /// <returns>Retorna uma lista de usários</returns>
         public static new List<Usuario> Ler() //new força a sobrescrita do método da classe pai
         {
             var usuarios = new List<Usuario>();
@@ -54,7 +64,7 @@ namespace Classes
                             continue;
                         }
                         string[] dados = linha.Split(';');
-                        usuarios.Add(new Usuario { Nome = dados[0], Telefone = dados[1], Email = dados[2] });
+                        usuarios.Add(new Usuario(dados[0],dados[1],dados[2]));
                     }
                 }
             }
