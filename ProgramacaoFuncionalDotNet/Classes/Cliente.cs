@@ -50,7 +50,8 @@ namespace Classes
         /// </summary>
         /// <param name="cliente">Instância de Cliente requerida</param>
         /// <returns></returns>
-        public string RetornaClienteFormatado(Cliente cliente)
+        
+        private string RetornaFormatado(Cliente cliente)
         {
             return $"{cliente.Nome};{cliente.Telefone};{cliente.Email};";
         }
@@ -58,13 +59,13 @@ namespace Classes
         /// <summary>
         /// Método que adiciona cliente ao banco de dados
         /// </summary>
-        public void Adicionar()
+        public virtual void Adicionar() //virtual permite que o método seja sobreescrito, já o sealed não permite sobreescrita
         {
             if (File.Exists(_db))
             {
                 using (var writer = new StreamWriter(_db, true))
                 {
-                    writer.WriteLine(RetornaClienteFormatado(this));
+                    writer.WriteLine(RetornaFormatado(this));
                 }
                 Console.WriteLine("\n\nCliente Adicionado com sucesso!!!");
             } else
