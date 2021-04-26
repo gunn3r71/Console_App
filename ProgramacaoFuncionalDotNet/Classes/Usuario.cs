@@ -80,5 +80,13 @@ namespace Classes
             }
             return usuarios;
         }
+        
+        /// <summary>
+        /// Método criado para testar a funcionalidade de base (que respeita o comportamento original da classe pai)
+        /// </summary>
+        public override void DizerOla()
+        {
+            base.DizerOla();
+        }
     }
 }

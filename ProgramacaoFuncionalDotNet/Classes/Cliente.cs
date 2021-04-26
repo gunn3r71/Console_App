@@ -102,6 +102,14 @@ namespace Classes
             }
             return clientes;
         }
+        /// <summary>
+        /// Método criado para testar o recurso de base
+        /// </summary>
+        public virtual void DizerOla()
+        {
+            Console.WriteLine($"Olá,{Nome}");
+        }
+
 
         public override string ToString()
         {
