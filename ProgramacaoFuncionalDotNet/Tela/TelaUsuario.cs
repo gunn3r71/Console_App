@@ -14,11 +14,11 @@ namespace Tela
             bool continuar = true;
             while (continuar)
             {
-                string menu = "\n\nVocê está no menu Clientes\n\n"
+                string menu = "\n\nVocê está no menu Usuários\n\n"
                         + $"Para Cadastrar cliente, Digite {CADASTRAR_USUARIO};\n"
                         + $"Para Listar os clientes, Digite {LISTAR_USUARIOS};\n";
 
-                Console.WriteLine($"{menu}Digite {SAIR} para sair de Clientes!");
+                Console.WriteLine($"{menu}Digite {SAIR} para sair de Usuários!");
                 Console.Write("> ");
                 int opcao = int.Parse(Console.ReadLine());
 
@@ -31,12 +31,12 @@ namespace Tela
                         Console.WriteLine("==============================================\n");
                         break;
                     case CADASTRAR_USUARIO:
-                        Console.WriteLine("\n================Cadastrar Cliente================\n");
-                        Console.Write("Para começar, insira o nome do cliente: ");
+                        Console.WriteLine("\n================Cadastrar Usuário================\n");
+                        Console.Write("Para começar, insira o nome do usuário: ");
                         string nome = Console.ReadLine();
-                        Console.Write("Agora insira o telefone do cliente(Apenas números): ");
+                        Console.Write("Agora insira o telefone do usuário(Apenas números): ");
                         string telefone = Console.ReadLine();
-                        Console.Write("Agora insira o email do cliente: ");
+                        Console.Write("Agora insira o email do usuário: ");
                         string email = Console.ReadLine();
 
                         var usuario = new Usuario(nome, telefone.ToString(), email);
@@ -44,12 +44,12 @@ namespace Tela
                         Console.WriteLine("\n=================================================\n");
                         break;
                     case LISTAR_USUARIOS:
-                        Console.WriteLine("\n================Listar Clientes================\n");
+                        Console.WriteLine("\n================Listar Usuários================\n");
                         Console.WriteLine("Clientes:");
                         var usuarios = Usuario.Ler();
-                        foreach (var c in usuarios)
+                        foreach (var u in usuarios)
                         {
-                            Console.WriteLine(c);
+                            Console.WriteLine(u);
                         }
                         Console.WriteLine("\n=================================================\n");
                         break;
@@ -60,6 +60,6 @@ namespace Tela
                         break;
                 }
             }
-
         }
     }
+}

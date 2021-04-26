@@ -43,7 +43,7 @@ namespace Classes
         public string Nome;
         public string Telefone;
         public string Email;
-        private static string _db = ConfigurationManager.AppSettings["db"];
+        private static string _db = ConfigurationManager.AppSettings["clientes_db"];
 
         /// <summary>
         /// Método auxiliar para converter o cliente numa string compátivel com o banco

@@ -14,7 +14,8 @@ namespace Tela
         private const int TABUADA = 2;
         private const int CALCULO_MEDIA = 3;
         private const int MENU_CLIENTES = 4;
-        private const int LIMPAR_TELA = 5;
+        private const int MENU_USUARIOS = 5;
+        private const int LIMPAR_TELA = 6;
         #endregion
 
         public static void Criar()
@@ -30,6 +31,7 @@ namespace Tela
                     + $"Para Calcular uma tabuada, Digite {TABUADA};\n"
                     + $"Para Efetuar um cálcuo de média, Digite {CALCULO_MEDIA};\n"
                     + $"Para ver menu Clientes, Digite {MENU_CLIENTES}\n"
+                    + $"Para ver menu Usuários, Digite {MENU_USUARIOS}\n"
                     + $"Para Limpar a tela, Digite {LIMPAR_TELA};\n\n";
 
                     Console.WriteLine($"{menu}Digite {SAIR} para sair do programa!");
@@ -69,6 +71,9 @@ namespace Tela
                             break;
                         case MENU_CLIENTES:
                             TelaCliente.Mostrar();
+                            break;
+                        case MENU_USUARIOS:
+                            TelaUsuario.Mostrar();
                             break;
                         case LIMPAR_TELA:
                             Console.Clear();

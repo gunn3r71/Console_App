@@ -9,6 +9,16 @@ namespace Classes
     {
         private static string _db = ConfigurationManager.AppSettings["usuarios_db"];
 
+        public Usuario()
+        {
+        }
+
+        /// <summary>
+        /// Construtor gerado aproveitando atributos da coasse pai
+        /// </summary>
+        /// <param name="nome">Nome de usuário</param>
+        /// <param name="telefone">Telefone de usuário</param>
+        /// <param name="email">Email de usuário</param>
         public Usuario(string nome, string telefone, string email) : base(nome, telefone, email)
         {
         }
