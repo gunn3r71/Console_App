@@ -1,6 +1,4 @@
 ﻿using Tela;
-using Componentes;
-using System;
 
 namespace ProgramacaoFuncionalDotNet
 {
