@@ -81,6 +81,11 @@ namespace Classes
             return usuarios;
         }
         
+        public int TesteProtected()
+        {
+            return this.RetornarSoma();
+        }
+
         /// <summary>
         /// Método criado para testar a funcionalidade de base (que respeita o comportamento original da classe pai)
         /// </summary>

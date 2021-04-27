@@ -110,6 +110,20 @@ namespace Classes
             Console.WriteLine($"Olá,{Nome}");
         }
 
+        /// <summary>
+        /// Exemplo de método protegido, atua como um privado,
+        /// porém, posso utilizar nas classes filhas.
+        /// </summary>
+        /// <returns>Retorna soma de 1+2</returns>
+        protected int RetornarSoma() 
+        {
+            return 1 + 2;
+        }
+
+        internal string RetornaNome()
+        {
+            return $"Olá, {Nome}! posso ser utilizado em qualquer lugar, desde que esteja dentro do escopo deste projeto";
+        }
 
         public override string ToString()
         {
