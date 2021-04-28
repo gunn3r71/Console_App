@@ -32,6 +32,22 @@ namespace Classes.Entidades
         public string Email;
         private string _db;
 
+
+        public void SetNome(string nome)
+        {
+            this.Nome = nome;
+        }
+
+        public void SetTelefone(string telefone)
+        {
+            this.Telefone = telefone;
+        }
+
+        public void setEmail(string email)
+        {
+            this.Email = email;
+        }
+
         public void Adicionar()
         {
             if (File.Exists(_db))
@@ -48,9 +64,9 @@ namespace Classes.Entidades
             }
         }
 
-        public List<Base> Ler()
+        public List<IPessoa> Ler()
         {
-            var pessoas = new List<Base>();
+            var pessoas = new List<IPessoa>();
             if (File.Exists(_db))
             {
                 using (StreamReader arquivo = File.OpenText(_db)) // Linha que abre o arquivo
@@ -66,7 +82,11 @@ namespace Classes.Entidades
                             continue;
                         }
                         string[] dados = linha.Split(';');
-                        pessoas.Add(new Base { Nome = dados[0], Telefone = dados[1], Email = dados[2] });
+                        var pessoa = (IPessoa)Activator.CreateInstance(this.GetType()); // Activator cria um objeto em memória de forma genérica
+                        pessoa.SetNome(dados[0]);
+                        pessoa.SetTelefone(dados[1]);
+                        pessoa.setEmail(dados[2]);
+                        pessoas.Add(pessoa);
                     }
                 }
             }

@@ -60,5 +60,12 @@ namespace Classes.Entidades
         {
             return $"Olá, {Nome}! posso ser utilizado em qualquer lugar, desde que esteja dentro do escopo deste projeto";
         }
+
+        public override string ToString()
+        {
+            return $"Nome: {this.Nome}\n"
+                  + $"Telefone: {this.Telefone}\n"
+                  + $"Email: {this.Email}\n";
+        }
     }
 }

@@ -20,5 +20,12 @@ namespace Classes.Entidades
         public Usuario(string nome, string telefone, string email) : base(nome, telefone, email)
         {
         }
+
+        public override string ToString()
+        {
+            return $"Nome: {this.Nome}\n"
+                  + $"Telefone: {this.Telefone}\n"
+                  + $"Email: {this.Email}\n";
+        }
     }
 }
