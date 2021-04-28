@@ -4,6 +4,12 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Classes\Base.xaml.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="Classes\Base.xaml" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="5.0.0" />
   </ItemGroup>
   <ItemGroup>

@@ -29,7 +29,7 @@ namespace Tela
                     + "Agora digite uma das opções abaixo: \n\n"
                     + $"Para Ler Arquivos, Digite {LER_ARQUIVOS};\n"
                     + $"Para Calcular uma tabuada, Digite {TABUADA};\n"
-                    + $"Para Efetuar um cálcuo de média, Digite {CALCULO_MEDIA};\n"
+                    + $"Para Efetuar um cálculo de média, Digite {CALCULO_MEDIA};\n"
                     + $"Para ver menu Clientes, Digite {MENU_CLIENTES}\n"
                     + $"Para ver menu Usuários, Digite {MENU_USUARIOS}\n"
                     + $"Para Limpar a tela, Digite {LIMPAR_TELA};\n\n";

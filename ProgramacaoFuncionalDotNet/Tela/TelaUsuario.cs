@@ -1,4 +1,5 @@
 ﻿using Classes;
+using Classes.Entidades;
 using System;
 
 namespace Tela
@@ -46,8 +47,8 @@ namespace Tela
                     case LISTAR_USUARIOS:
                         Console.WriteLine("\n================Listar Usuários================\n");
                         Console.WriteLine("Clientes:");
-                        var usuarios = Usuario.Ler();
-                        foreach (var u in usuarios)
+                        var usuarios = new Usuario();
+                        foreach (var u in usuarios.Ler())
                         {
                             Console.WriteLine(u);
                         }
