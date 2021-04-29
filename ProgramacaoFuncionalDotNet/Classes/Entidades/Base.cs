@@ -3,13 +3,10 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Classes.Entidades
 {
-    public class Base : IPessoa
+    public abstract class Base : IPessoa
     {
 
         public Base()
@@ -48,7 +45,7 @@ namespace Classes.Entidades
             this.Email = email;
         }
 
-        public void Adicionar()
+        public virtual void Adicionar()
         {
             if (File.Exists(_db))
             {
